@@ -9,31 +9,22 @@
     <script src="modules/posts/js/controllers.js"></script>
     <script src="modules/posts/js/directives.js"></script>
     <script src="modules/posts/js/postsModule.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.0-beta.0/angular-route.js"></script>
 
 
 </head>
 <body>
     <h1> {{1+2}}</h1>
-
+    <ul>
+        <li><a href="modules/postView.html">post view</a></li>
+    </ul>
     
     <!-- Posts Posts Posts Posts-->
-    <div ng-controller="PostController"> 
-            <form name="postArea" novalidate>
-                Type your post here:
-                <input  type="text" name="textBox" ng-model="post.content" ng-required="true" ng-maxlength="10"/>
-                <span class="error-message" ng-show="postArea.textBox.$dirty && postArea.textBox.$error.required">Mandatory Field</span>     
-                <span class="error-message" ng-show="postArea.textBox.$dirty && postArea.textBox.$error.maxlength">Maximum of 10 characters</span>
-                
-            
-            </form>
-        <button class="PostButton"><a href="#" >Post</a> </button>
-        <h1> {{post.content}} </h1>
-            <!-- Refer to model as post.content NOT $scope.post.content-->
-        
-    </div>
+<ng-view>
+</ng-view>
     
 
     
     
 </body>
-</html>
+</html>   
